@@ -1,0 +1,229 @@
+<div class="content clearFix">
+    <div class="header clearFix">
+        <h2>OJT Application Form</h2>
+    </div>
+    <div class="ttl clearFix">
+        <h3>Personal Information</h3>
+    </div>
+    <%= form_with url: "/search", method: :get do |form| %>
+        <table>
+            <tr>
+                <th>
+                    <%= form.label :name, "Name",class:"name"%>
+                </th>
+                <td>
+                    <%= form.text_field :name, class: "name-txt" %>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <%= form.label :name, "Profile Picture" ,class:"name"%>
+                </th>
+                <td>
+                    <div class=" upt-btn">
+                        <%= form.file_field :image_url%>
+
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <%= form.label :name, "Date Of Birth" ,class:"name"%>
+                </th>
+                <td>
+                    <%= form.date_field :born_on,class:"dob" %>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <%= form.label :phone, "Phone" ,class:"name"%>
+                </th>
+                <td class="phone">
+                    <%= form.text_field :phone,class:"ph" %>
+                        <i class="material-icons pls">&#xe548;</i>
+
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <%= form.label :name, "Email" ,class:"name"%>
+                </th>
+                <td>
+                    <%= form.email_field :email, class: 'name-txt' %>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <%= form.label :name, "Currnet Address" ,class:"name"%>
+                </th>
+                <td>
+                    <%= form.text_area :name, class: 'add-txt' %>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <%= form.label :name, "Hometown Address" ,class:"name"%>
+                </th>
+                <td>
+                    <%= form.text_area :name, class: 'add-txt' %>
+                </td>
+            </tr>
+        </table>
+        <div class="ttl clearFix">
+            <h3>Education Background</h3>
+        </div>
+        <table>
+            <tr>
+                <th>
+                    <%= form.label :name, "Education Level" ,class:"name"%>
+                </th>
+                <td>
+                    <div class="bdr">
+                        <%= form.label :name, "Bachelor",class: "heading"%>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <%= form.label :name, "Univesity" %> <br>
+                                    <%= form.text_field :name,class:"uni" %>
+                            </li>
+                            <li>
+                                <%= form.label :name, "Year"%> <br>
+                                    <%= form.text_field :name ,class:"uni" %>
+                            </li>
+                            <li>
+                                <%= form.label :name, "Degree"%> <br>
+                                    <%= form.text_field :name,class:"uni" %>
+                            </li>
+                        </ul>
+                        <div class="bdr1">
+                            <%= form.label :name, "Master",class: "heading"%>
+                        </div>
+                        <div class="list1">
+                            <ul>
+                                <li>
+                                    <%= form.label :name, "Univesity"%> <br>
+                                        <%= form.text_field :name,class:"uni" %>
+                                </li>
+                                <li>
+                                    <%= form.label :name, "Year"%> <br>
+                                        <%= form.text_field :name ,class:"uni" %>
+                                </li>
+                                <li>
+                                    <%= form.label :name, "Degree"%> <br>
+                                        <%= form.text_field :name,class:"uni" %>
+                                </li>
+                            </ul>
+                        </div>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <%= form.label :name, "Deploma",class:"name"%>
+                </th>
+                <td>
+                    <%= form.text_field :name, class: "name-txt" %>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <%= form.label :name, "Other Certificates" ,class:"name"%>
+                </th>
+                <td>
+                    <%= form.text_field :name, class: "name-txt" %>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <%= form.label :name, "Programming Skills" ,class:"name"%>
+                </th>
+                <td>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <%= form.label :name, "Langage"%> <br>
+                                    <%= form.text_field :name,class:"lan",value:"Java" %>
+                            </li>
+                            <li class="level">
+                                <%= form.label :name, "Level"%> <br>
+                                    <%= form.text_field :name ,class:"lvl" ,value:"A" %>
+                                        <i class="material-icons pls1">&#xe548;</i>
+                            </li>
+
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th class="lan-skill">
+                    <%= form.label :name, "Language Skills",class:"name"%>
+                </th>
+                <td class="skill1">
+                    <div class="bdr">
+                        <%= form.label :name, "English",class: "heading"%>
+                    </div> <br>
+                    <%= form.text_field :name,class:"skill",value:"Level" %>
+                        <div class="bdr01">
+                            <%= form.label :name, "Japan",class: "heading"%>
+                        </div> <br>
+                        <%= form.text_field :name,class:"skill",value:"Level" %>
+                            <div class="bdr01">
+                                <%= form.label :name, "Other",class: "heading"%>
+                            </div> <br>
+                            <%= form.text_field :name,class:"skill",value:"Level" %>
+                </td>
+            </tr>
+        </table>
+        <div class="ttl clearFix">
+            <h3>Experience</h3>
+        </div>
+        <table>
+            <tr>
+                <th>
+                    <%= form.label :name, "Has job Experience",class:"name"%>
+                </th>
+                <td>
+                    <%= form.check_box :job, class:"job" %>
+                </td>
+            </tr>
+
+            <tr class="block">
+                <th>
+                    <%= form.label :name, "Internship Info",class:"name"%>
+                </th>
+                <td>
+                    <%= form.text_area :name, class: 'add-txt' %>
+                </td>
+            </tr>
+            <tr class="block">
+                <th>
+                    <%= form.label :name, "Job Experience",class:"name"%>
+                </th>
+                <td>
+                    <%= form.text_area :name, class: 'add-txt' %>
+
+                </td>
+            </tr>
+            <tr class="block">
+                <th>
+                    <%= form.label :name, "Total Experience Year" ,class:"name"%>
+                </th>
+                <td>
+                    <%= form.text_field:name, class: 'name-txt' %>
+                </td>
+            </tr>
+            <tr class="block">
+                <th class="cmt">
+                    <%= form.label :name, "Comment" ,class:"name"%>
+                </th>
+                <td>
+                    <%= form.text_area :name, class: 'add-txt' %>
+                </td>
+            </tr>
+
+        </table>
+        <%= form.submit "Reset" , class:"reset"%>
+        <%= form.submit "Submit" , class:"submit"%>
+    <% end %>
+</div>
