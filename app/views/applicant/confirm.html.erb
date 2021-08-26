@@ -1,0 +1,13 @@
+<div class="content clearFix">
+    <div class="header clearFix">
+        <h2>Confirm Form Data</h2>
+    </div>
+        <%= form_with(url: confirm_path, scope: :session, local: true) do |form| %>
+
+        <%= link_to '<button type="button" class="reset">Reset</button>'.html_safe,form_path %>
+        <%= link_to '<button type="button"class="submit">Submit</button>'.html_safe%>
+    <% end %>
+
+
+    
+</div>

@@ -17,7 +17,7 @@ $(document).ready(function() {
     var maxField = 2;
     var addPhone = $('.pls');
     var phoneWrapper = $('.phone');
-    var fieldHTML = '<div class="phone_item"><input type="number" class="data_phone" name="applicant[phone_no2]" value=""/><a href="javascript:void(0);" class="remove_phone"><i class="fas fa-minus"></i></a></div>'; //New input field html 
+    var fieldHTML = '<div class="phone_item"><input type="number" class="data_phone" name="applicant[phone_no2]" value=""/><a href="javascript:void(0);" class="remove_phone"><i class="minus fa fa-minus" ></i></a></div>'; //New input field html 
     var x = 1;
     $(addPhone).click(function() {
 
@@ -39,7 +39,7 @@ $(document).ready(function() {
     var maxField = 6;
     var addPhone = $('.pls1');
     var phoneWrapper = $('.level');
-    var fieldHTML = '<div class="level_item"><input type="number" class="lan" name="applicant[level_no2]" value=""/> <input type="number" class="lvl1" name="applicant[level_no2]" value=""/>    <a href="javascript:void(0);" class="remove_phone"><i class="fas fa-minus"></i></a></div>'; //New input field html 
+    var fieldHTML = '<div class="level_item"><input type="number" class="lan" name="applicant[level_no2]" value=""/> <input type="number" class="lvl1" name="applicant[level_no2]" value=""/> <a href="javascript:void(0);" class="remove_phone"><i class="lvl-min fa fa-minus"></i></a></div>'; //New input field html 
     var x = 1;
     $(addPhone).click(function() {
 
@@ -61,9 +61,9 @@ $(document).ready(function() {
     $(".job").checked(function() {
         alert('helloworld');
         if (this.checked) {
-            $(".block").css("display", "block");
+            $(".chk").css("display", "block");
         } else {
-            $(".block").css("display", "none");
+            $(".chk").css("display", "none");
         }
 
     });

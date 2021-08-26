@@ -5,7 +5,7 @@
     <div class="ttl clearFix">
         <h3>Personal Information</h3>
     </div>
-    <%= form_with url: "/search", method: :get do |form| %>
+     <%= form_with(url: form_path, scope: :session, local: true) do |form| %>
         <table>
             <tr>
                 <th>
@@ -22,7 +22,6 @@
                 <td>
                     <div class=" upt-btn">
                         <%= form.file_field :image_url%>
-
                     </div>
 
                 </td>
@@ -184,11 +183,11 @@
                     <%= form.label :name, "Has job Experience",class:"name"%>
                 </th>
                 <td>
-                    <%= form.check_box :job, class:"job" %>
+                    <%= form.check_box :job, class:"job",value:false %>
                 </td>
             </tr>
 
-            <tr class="block">
+            <tr class="chk">
                 <th>
                     <%= form.label :name, "Internship Info",class:"name"%>
                 </th>
@@ -196,7 +195,7 @@
                     <%= form.text_area :name, class: 'add-txt' %>
                 </td>
             </tr>
-            <tr class="block">
+            <tr class="chk">
                 <th>
                     <%= form.label :name, "Job Experience",class:"name"%>
                 </th>
@@ -205,7 +204,7 @@
 
                 </td>
             </tr>
-            <tr class="block">
+            <tr class="chk">
                 <th>
                     <%= form.label :name, "Total Experience Year" ,class:"name"%>
                 </th>
@@ -213,7 +212,7 @@
                     <%= form.text_field:name, class: 'name-txt' %>
                 </td>
             </tr>
-            <tr class="block">
+            <tr class="chk">
                 <th class="cmt">
                     <%= form.label :name, "Comment" ,class:"name"%>
                 </th>
@@ -223,7 +222,7 @@
             </tr>
 
         </table>
-        <%= form.submit "Reset" , class:"reset"%>
-        <%= form.submit "Submit" , class:"submit"%>
+        <%= link_to '<button type="button" class="reset">Reset</button>'.html_safe %>
+        <%= link_to '<button type="button"class="submit">Submit</button>'.html_safe,confirm_path %>
     <% end %>
 </div>

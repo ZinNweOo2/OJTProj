@@ -35,41 +35,49 @@
         background-color: #6d9eeb;
         padding: 5px 0 5px 0;
         margin-bottom: 1px;
+        font-family: 'Meiryo-R';
     }
     
     .header h2 {
         color: #ffffff;
         font-size: 20px;
         text-align: center;
+        font-family: 'Meiryo-R';
+        padding-bottom: 9px;
     }
     
     .ttl {
         background-color: #fce5cd;
         padding: 1px 0 1px 7px;
         margin-bottom: 1px;
+        font-family: 'Meiryo-R';
     }
     
     .ttl h3 {
         color: #807569;
         font-size: 18px;
+        padding-bottom: 7px;
     }
     
     table {
         width: 100%;
+        font-family: 'Meiryo-R';
     }
     
     th {
         width: 40%;
         text-align: left;
         padding-left: 5px;
-        color: #bd7c00;
+        color: #444444;
         font-size: 16px;
+        font-family: 'Meiryo-R';
         background-color: #f3f3f3;
         border-bottom: 1px solid #ffffff;
     }
     
     td {
         width: 60%;
+        font-family: 'Meiryo-R';
         background-color: #ffffff;
     }
     
@@ -78,8 +86,9 @@
     }
     
     .name-txt {
-        width: 99%;
+        width: 591px;
         border: 1px solid #cccccc;
+        font-family: 'Meiryo-R';
         height: 25px;
     }
     
@@ -91,9 +100,10 @@
     
     .dob {
         border: 2px solid #cccccc;
-        padding: 3px 40px 3px 20px;
+        padding-right: 2px;
         margin-bottom: 2px;
         margin-top: 3px;
+        font-family: 'Meiryo-R';
         font-size: 18px;
     }
     
@@ -116,7 +126,7 @@
     }
     
     .add-txt {
-        width: 99%;
+        width: 591px;
         height: 60px;
         border: 1px solid #cccccc;
     }
@@ -134,7 +144,7 @@
     }
     
     .list {
-        margin-left: -35px;
+        margin-left: -42px;
         margin-top: -3px;
     }
     
@@ -156,12 +166,19 @@
         background-color: #cfe2f3;
         border-radius: 2px;
         border: none;
-        margin-left: 35px;
+        margin-left: 40px;
     }
     
     .list1 {
         margin-left: 0px;
         margin-top: -5px;
+    }
+    
+    .job {
+        top: 0;
+        left: 0;
+        height: 15px;
+        width: 15px;
     }
     
     .lan {
@@ -180,7 +197,7 @@
     }
     
     .lvl1 {
-        width: 10.2%;
+        width: 10.8%;
         border: 2px solid #cccccc;
         padding-bottom: 5px;
         color: #999999;
@@ -227,12 +244,21 @@
         margin-top: 1px;
         position: absolute;
         color: #cccccc;
+        cursor: pointer;
+    }
+    
+    .pls:hover {
+        background-color: #6d9eeb;
+    }
+    
+    .pls1:hover {
+        background-color: #6d9eeb;
     }
     
     .pls1 {
         background-color: #ffffff;
         margin-left: 1px;
-        margin-top: 1px;
+        margin-top: 2px;
         position: absolute;
         color: #cccccc;
     }
@@ -243,18 +269,40 @@
         padding-bottom: 148px;
     }
     
-    .block {
-        /* display: none; */
-    }
-    
     .reset {
         background-color: #6d9eeb;
         padding: 5px 20px 5px 20px;
-        margin: 30px 20px 30px 340px;
+        margin: 50px 20px 30px 390px;
     }
     
     .submit {
         background-color: #6d9eeb;
         padding: 4px 17px 4px 17px;
         margin: 30px 20px 30px 0px;
+    }
+    
+    .minus {
+        margin-left: 5px;
+        color: #ffffff;
+        padding: 0px 3px 0px 2px;
+        border: 1px solid #cccccc;
+        background-color: #cccccc;
+        height: 15px;
+    }
+    
+    .minus:hover {
+        background-color: #6d9eeb;
+    }
+    
+    .lvl-min:hover {
+        background-color: #6d9eeb;
+    }
+    
+    .lvl-min {
+        margin-left: 2px;
+        color: #ffffff;
+        padding: 0px 3px 0px 3px;
+        border: 1px solid #cccccc;
+        background-color: #cccccc;
+        height: 15px;
     }
