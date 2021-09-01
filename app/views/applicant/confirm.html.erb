@@ -1,13 +1,71 @@
-<div class="content clearFix">
+<%= form_with(url: form_path, scope: :session, local: true) do |form| %>
+
+  <div class="content clearfix">
     <div class="header clearFix">
-        <h2>Confirm Form Data</h2>
+      <h2>Your CV Form</h2>
     </div>
-        <%= form_with(url: confirm_path, scope: :session, local: true) do |form| %>
-
-        <%= link_to '<button type="button" class="reset">Reset</button>'.html_safe,form_path %>
-        <%= link_to '<button type="button"class="submit">Submit</button>'.html_safe%>
-    <% end %>
-
-
+      <div class="side clearFix">
+        <div class="left-side">
+          <p class="cv-form"> <span>Name:</span> <%= @applicant.name %></p>
+          <p class="cv-form"><span>Phone No: # </span><%= @applicant.phone_no1 %> </span><%= @applicant.phone_no2 %></p>
+          <p class="cv-form"><span>Email: </span><%= @applicant.email %></p>
+          <p class="cv-form"><span>Birthday: </span><%= @applicant.dob %></p>
+        </div>
+        <div class="right-side">
+        <img src="/path">
+          <%= @file_path %>
+        </div>
+      </div>
+      <div class="boder clearFix"></div>
+      <div class="edu-cv clearFix">EDUCATION LEVEL:</div>
+      <ul>
+        <li>
+          <p class="cv-form bch"><%= @applicant.bachelor_university %>,</p>
+          <p class="cv-form bch"><%= @applicant.bachelor_year %></p>
+          <p class="cv-form bch"><%= @applicant.bachelor_degree %>(Bachelor)</p>
+          <p class="cv-form bch"><%= @applicant.master_university %></p>
+          <p class="cv-form bch"><%= @applicant.master_graduate_year %></p>
+          <p class="cv-form bch"><%= @applicant.master_degree %>(Master)</p>
+          <p class="cv-form bch"><%= @applicant.deploma_name %> (Deploma)</p>
+          <p class="cv-form bch"><%= @applicant.certificate %></p>
+        </li>
+      </ul>
+      <div class="edu-cv clearFix">PROGRAMMING SKILLS:</div>
+      <ul>
+        <li>
+          <p class="cv-form bch"><span>Langage: </span><%= @applicant.language %></p>
+        </li>
+        <li>
+          <p class="cv-form bch"><span>Level: </span><%= @applicant.level %></p>
+        </li>
+      </ul>
+      <div class="edu-cv clearFix">LANGUAGE SKILLS:</div>
+      <ul>
+         <li>
+          <p class="cv-form bch"><span>English Language Skill: </span><%= @applicant.english %></p>
+        </li>
+        <li>
+          <p class="cv-form bch"><span>Japna Language Skill: </span><%= @applicant.japan %></p>
+        </li>
+        <li>
+          <p class="cv-form bch"><span>Other Skills: </span><%= @applicant.other%></p>
+        </li>
+      </ul>
+      <div class="edu-cv clearFix">EXPEIENCES:</div>
     
-</div>
+        <div class="cv-form info clearFix">*Internship Informations*</div>
+          <p class="exp"><%= @applicant.internship_info %></p>
+        <div class="cv-form info clearFix">*Job Experiences*</div>
+          <p class="exp"><%= @applicant.job_experience %></p>
+          <p class="exp">*Total Job Experiences Year is <%= @applicant.total_exp_year %>years.</p>
+        <div class="cv-form info clearFix">*Comment*</div>
+        <p class="exp"><%= @applicant.comment %></p>   
+        <div class="cv-form info clearFix">Address:</div>
+          <p class="exp">-Current Address: <%= @applicant.currnet_address %></p>
+          <p class="exp">-Hometown Address: <%= @applicant.hometown_address %></p>
+  </div>
+  <div class="cv-btn">
+      <%= link_to '<button type="button" class="reset">Cancle</button>'.html_safe, form_path%>
+      <%= link_to '<button type="button" class="submit">Submit</button>'.html_safe%>
+  </div>
+<% end %>

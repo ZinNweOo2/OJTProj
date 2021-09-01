@@ -5,67 +5,108 @@
     <div class="ttl clearFix">
         <h3>Personal Information</h3>
     </div>
-     <%= form_with(url: form_path, scope: :session, local: true) do |form| %>
+    <%= form_with model: @applicant, url: confirm_applicant_index_path(@applicant),class:"main-form" do |form| %>
         <table>
             <tr>
                 <th>
                     <%= form.label :name, "Name",class:"name"%>
+                    <% if @applicant.errors[:name].any? %>
+                            <div class="err-msg">*!*</div>
+                    <% end %>
+                    
                 </th>
                 <td>
                     <%= form.text_field :name, class: "name-txt" %>
+                        <% if @applicant.errors[:name].any? %>
+                            <div class="err-msg">***Name can't blank!***</div>
+                        <% end %>                    
                 </td>
             </tr>
             <tr>
                 <th>
-                    <%= form.label :name, "Profile Picture" ,class:"name"%>
+                    <%= form.label :profile_picture, "Profile Picture" ,class:"name"%>
+                     <% if @applicant.errors[:profile_photo].any? %>
+                            <div class="err-msg">*!*</div>
+                    <% end %>
                 </th>
                 <td>
                     <div class=" upt-btn">
-                        <%= form.file_field :image_url%>
+                        <%= form.file_field :profile_photo %>                      
                     </div>
-
+                    <% if @applicant.errors[:profile_photo].any? %>
+                        <div class="err-msg">***Please Choose Your Profile!***</div>
+                    <% end %>
                 </td>
             </tr>
             <tr>
                 <th>
-                    <%= form.label :name, "Date Of Birth" ,class:"name"%>
+                    <%= form.label :dob, "Date Of Birth" ,class:"name"%>
+                     <% if @applicant.errors[:dob].any? %>
+                            <div class="err-msg">*!*</div>
+                    <% end %>
                 </th>
                 <td>
-                    <%= form.date_field :born_on,class:"dob" %>
+                    <%= form.date_field :dob,class:"dob" %>
+                        <% if @applicant.errors[:dob].any? %>
+                            <div class="err-msg">Choose Your Birthday!</div>
+                        <% end %>
                 </td>
             </tr>
             <tr>
                 <th>
-                    <%= form.label :phone, "Phone" ,class:"name"%>
+                    <%= form.label :phone1, "Phone" ,class:"name"%>
+                     <% if @applicant.errors[:phone_no1].any? %>
+                            <div class="err-msg">*!*</div>
+                    <% end %>
                 </th>
                 <td class="phone">
-                    <%= form.text_field :phone,class:"ph" %>
+                    <%= form.text_field :phone_no1,class:"ph"%>
                         <i class="material-icons pls">&#xe548;</i>
-
+                        <% if @applicant.errors[:phone_no1].any? %>
+                            <div class="err-msg">*We need your ph:no to contact!*</div>
+                        <% end %>
                 </td>
             </tr>
             <tr>
                 <th>
-                    <%= form.label :name, "Email" ,class:"name"%>
+                    <%= form.label :email, "Email" ,class:"name"%>
+                     <% if @applicant.errors[:email].any? %>
+                            <div class="err-msg">*!*</div>
+                    <% end %>
                 </th>
                 <td>
-                    <%= form.email_field :email, class: 'name-txt' %>
+                    <%= form.email_field :email, class: 'name-txt'%>
+                        <% if @applicant.errors[:email].any? %>
+                            <div class="err-msg">**Please fill your email address!**</div>
+                        <% end %>
                 </td>
             </tr>
             <tr>
                 <th>
-                    <%= form.label :name, "Currnet Address" ,class:"name"%>
+                    <%= form.label :current_add, "Currnet Address" ,class:"name"%>
+                     <% if @applicant.errors[:currnet_address].any? %>
+                            <div class="err-msg">*!*</div>
+                    <% end %>
                 </th>
                 <td>
-                    <%= form.text_area :name, class: 'add-txt' %>
+                    <%= form.text_area :currnet_address, class:'add-txt'%>
+                        <% if @applicant.errors[:currnet_address].any? %>
+                            <div class="err-msg">**Please fill your current address!**</div>
+                        <% end %>
                 </td>
             </tr>
             <tr>
                 <th>
-                    <%= form.label :name, "Hometown Address" ,class:"name"%>
+                    <%= form.label :home_add, "Hometown Address" ,class:"name"%>
+                     <% if @applicant.errors[:hometown_address].any? %>
+                            <div class="err-msg">*!*</div>
+                    <% end %>
                 </th>
                 <td>
-                    <%= form.text_area :name, class: 'add-txt' %>
+                    <%= form.text_area :hometown_address, class:'add-txt'%>
+                        <% if @applicant.errors[:hometown_address].any? %>
+                            <div class="err-msg">*Please fill your hometown address!*</div>
+                        <% end %>
                 </td>
             </tr>
         </table>
@@ -75,43 +116,51 @@
         <table>
             <tr>
                 <th>
-                    <%= form.label :name, "Education Level" ,class:"name"%>
+                    <%= form.label :edu_lbl, "Education Level" ,class:"name"%>
                 </th>
                 <td>
                     <div class="bdr">
-                        <%= form.label :name, "Bachelor",class: "heading"%>
+                        <%= form.label :bachelor, "Bachelor",class: "heading"%>
                     </div>
                     <div class="list">
                         <ul>
                             <li>
-                                <%= form.label :name, "Univesity" %> <br>
-                                    <%= form.text_field :name,class:"uni" %>
+                                <%= form.label :uni, "Univesity" %> <br>
+                                <%= form.text_field :bachelor_university,class:"uni" %>
+
                             </li>
                             <li>
-                                <%= form.label :name, "Year"%> <br>
-                                    <%= form.text_field :name ,class:"uni" %>
+                                <%= form.label :year, "Year"%> <br>
+                                <%= form.text_field :bachelor_year ,class:"uni" %>
+
                             </li>
                             <li>
-                                <%= form.label :name, "Degree"%> <br>
-                                    <%= form.text_field :name,class:"uni" %>
+                                <%= form.label :degree, "Degree"%> <br>
+                                <%= form.text_field :bachelor_degree,class:"uni" %>
+
                             </li>
                         </ul>
                         <div class="bdr1">
-                            <%= form.label :name, "Master",class: "heading"%>
+                            <%= form.label :master, "Master",class: "heading"%>
                         </div>
                         <div class="list1">
                             <ul>
                                 <li>
-                                    <%= form.label :name, "Univesity"%> <br>
-                                        <%= form.text_field :name,class:"uni" %>
+                                    <%= form.label :mstr_uni,"Univesity"%> <br>
+                                    <%= form.text_field :master_university,class:"uni" %>
+
+
                                 </li>
                                 <li>
-                                    <%= form.label :name, "Year"%> <br>
-                                        <%= form.text_field :name ,class:"uni" %>
+                                    <%= form.label :mstr_year,"Year"%> <br>
+                                    <%= form.text_field :master_graduate_year ,class:"uni" %>
+
+
                                 </li>
                                 <li>
-                                    <%= form.label :name, "Degree"%> <br>
-                                        <%= form.text_field :name,class:"uni" %>
+                                    <%= form.label :mstr_degree, "Degree"%> <br>
+                                    <%= form.text_field :master_degree,class:"uni" %>
+
                                 </li>
                             </ul>
                         </div>
@@ -119,58 +168,62 @@
             </tr>
             <tr>
                 <th>
-                    <%= form.label :name, "Deploma",class:"name"%>
+                    <%= form.label :deploma, "Deploma",class:"name"%>
                 </th>
                 <td>
-                    <%= form.text_field :name, class: "name-txt" %>
+                    <%= form.text_field :deploma_name,class:"name-txt" %>
+
                 </td>
             </tr>
             <tr>
                 <th>
-                    <%= form.label :name, "Other Certificates" ,class:"name"%>
+                    <%= form.label :certificate, "Other Certificates" ,class:"name"%>
                 </th>
                 <td>
-                    <%= form.text_field :name, class: "name-txt" %>
+                    <%= form.text_field :certificate, class: "name-txt" %>
+
                 </td>
             </tr>
             <tr>
                 <th>
-                    <%= form.label :name, "Programming Skills" ,class:"name"%>
+                    <%= form.label :program_skill, "Programming Skills" ,class:"name"%>
                 </th>
                 <td>
                     <div class="list">
                         <ul>
                             <li>
-                                <%= form.label :name, "Langage"%> <br>
-                                    <%= form.text_field :name,class:"lan",value:"Java" %>
+                                <%= form.label :language, "Langage"%> <br>
+                                <%= form.text_field :language,class:"lan",value:"Java" %>
                             </li>
                             <li class="level">
-                                <%= form.label :name, "Level"%> <br>
-                                    <%= form.text_field :name ,class:"lvl" ,value:"A" %>
-                                        <i class="material-icons pls1">&#xe548;</i>
-                            </li>
-
-                        </ul>
+                                <%= form.label :level, "Level"%> <br>
+                                    <%= form.text_field :level ,class:"lvl" ,value:"A" %>
+                                    <i class="material-icons pls1">&#xe548;</i>  
+                             </li>
+                         </ul>
                     </div>
                 </td>
             </tr>
             <tr>
                 <th class="lan-skill">
-                    <%= form.label :name, "Language Skills",class:"name"%>
+                    <%= form.label :language_skill, "Language Skills",class:"name"%>
                 </th>
                 <td class="skill1">
                     <div class="bdr">
-                        <%= form.label :name, "English",class: "heading"%>
+                        <%= form.label :english, "English",class: "heading"%>
                     </div> <br>
-                    <%= form.text_field :name,class:"skill",value:"Level" %>
+                    <%= form.text_field :english,class:"skill",value:"Level" %>
+
                         <div class="bdr01">
-                            <%= form.label :name, "Japan",class: "heading"%>
+                            <%= form.label :japan, "Japan",class: "heading"%>
                         </div> <br>
-                        <%= form.text_field :name,class:"skill",value:"Level" %>
+                        <%= form.text_field :japan,class:"skill",value:"Level" %>
+
                             <div class="bdr01">
-                                <%= form.label :name, "Other",class: "heading"%>
+                                <%= form.label :other, "Other",class: "heading"%>
                             </div> <br>
-                            <%= form.text_field :name,class:"skill",value:"Level" %>
+                            <%= form.text_field :other,class:"skill",value:"Level" %>
+
                 </td>
             </tr>
         </table>
@@ -180,49 +233,52 @@
         <table>
             <tr>
                 <th>
-                    <%= form.label :name, "Has job Experience",class:"name"%>
+                    <%= form.label :job_exp, "Has job Experience",class:"name"%>
                 </th>
                 <td>
-                    <%= form.check_box :job, class:"job",value:false %>
+                    <%= form.check_box :job_exp, class:"job",value:false %>
+
                 </td>
             </tr>
 
             <tr class="chk">
                 <th>
-                    <%= form.label :name, "Internship Info",class:"name"%>
+                    <%= form.label :internship_info, "Internship Info",class:"name"%>
                 </th>
                 <td>
-                    <%= form.text_area :name, class: 'add-txt' %>
-                </td>
-            </tr>
-            <tr class="chk">
-                <th>
-                    <%= form.label :name, "Job Experience",class:"name"%>
-                </th>
-                <td>
-                    <%= form.text_area :name, class: 'add-txt' %>
+                    <%= form.text_area :internship_info, class: 'add-txt' %>
 
                 </td>
             </tr>
             <tr class="chk">
                 <th>
-                    <%= form.label :name, "Total Experience Year" ,class:"name"%>
+                    <%= form.label :exp, "Job Experience",class:"name"%>
                 </th>
                 <td>
-                    <%= form.text_field:name, class: 'name-txt' %>
+                    <%= form.text_area :job_experience, class: 'add-txt' %>
+
+                </td>
+            </tr>
+            <tr class="chk">
+                <th>
+                    <%= form.label :exp_year, "Total Experience Year" ,class:"name"%>
+                </th>
+                <td>
+                    <%= form.text_field :total_exp_year, class: 'name-txt' %>
+
                 </td>
             </tr>
             <tr class="chk">
                 <th class="cmt">
-                    <%= form.label :name, "Comment" ,class:"name"%>
+                    <%= form.label :cmt, "Comment" ,class:"name"%>
                 </th>
                 <td>
-                    <%= form.text_area :name, class: 'add-txt' %>
+                    <%= form.text_area :comment, class: 'add-txt' %>
                 </td>
             </tr>
 
         </table>
-        <%= link_to '<button type="button" class="reset">Reset</button>'.html_safe %>
-        <%= link_to '<button type="button"class="submit">Submit</button>'.html_safe,confirm_path %>
+        <%= link_to '<button type="button" class="reset">Reset</button>'.html_safe,form_path %>
+        <%= form.submit "Submit", class:"submit"%>
     <% end %>
 </div>

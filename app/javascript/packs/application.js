@@ -58,7 +58,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    $(".job").checked(function() {
+    $(".job_exp").checked(function() {
         alert('helloworld');
         if (this.checked) {
             $(".chk").css("display", "block");
