@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     collection do
       get :_form, to: "applicant#form"
       post :confirm    
+      post :save
     end
   end
 

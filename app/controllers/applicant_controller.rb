@@ -9,6 +9,7 @@ class ApplicantController < ApplicationController
     # render plain: params[:applicant][:name]
     @applicant = Applicant.new(form_params) 
     if @applicant.valid? 
+      # render plain: form_params
       img_name = params[:applicant][:profile_photo].original_filename
       user_name = params[:applicant][:name]
       path = File.join("app","assets","images",user_name+img_name)
@@ -17,6 +18,18 @@ class ApplicantController < ApplicationController
     else
       render :form
     end
+  end
+  
+  def save
+    @form = Applicant.new(save_params) 
+    @is_save_form = FormService.saveObjs(@form)
+      # render plain: save_params
+    
+    # if is_save_form
+    #   redirect to save_applicant_index_path
+    #   else
+    #     redirect to confirm_applicant_index_path
+    # end
   end
 
   private
@@ -82,4 +95,8 @@ class ApplicantController < ApplicationController
     params.require(:obj).permit(:name,:profile_photo,:dob,:phone_no1,:phone_no2,:email,:currnet_address,:hometown_address,:bachelor_university,:bachelor_year,:bachelor_degree,:master_university,:master_graduate_year,:master_degree,:deploma_name,:certificate,:language,:english,:japan,:other,:internship_info,:job_experience,:total_exp_year,:comment,:programming,:language,:level)
  end
 
+ private
+ def save_params
+  params.require(:applicant).permit(:profile_photo,:dob,:phone_no1,:phone_no2,:email,:currnet_address,:hometown_address,:bachelor_university,:bachelor_year,:bachelor_degree,:master_university,:master_graduate_year,:master_degree,:deploma_name,:certificate,:language,:english,:japan,:other,:internship_info,:job_experience,:total_exp_year,:comment,:programming,:language,:level)
+ end
 end

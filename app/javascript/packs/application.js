@@ -58,13 +58,8 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    $(".job_exp").checked(function() {
+    $(".job").onclick(function() {
         alert('helloworld');
-        if (this.checked) {
-            $(".chk").css("display", "block");
-        } else {
-            $(".chk").css("display", "none");
-        }
 
     });
 });

@@ -1,6 +1,9 @@
 class FormRepository
       # @return [<Type>] <users>
-      def getAllForms
-        @save = Form.all.order(save_objs)
+    class << self
+
+      def saveObjs(form)
+        @is_save_form = form.save
+      end
     end
 end

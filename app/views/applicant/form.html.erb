@@ -18,8 +18,8 @@
                 <td>
                     <%= form.text_field :name, class: "name-txt" %>
                         <% if @applicant.errors[:name].any? %>
-                            <div class="err-msg">***Name can't blank!***</div>
-                        <% end %>                    
+                        <div class="err-msg">***Name can't be blank!***</div>                        
+                        <% end %>                   
                 </td>
             </tr>
             <tr>
@@ -236,7 +236,7 @@
                     <%= form.label :job_exp, "Has job Experience",class:"name"%>
                 </th>
                 <td>
-                    <%= form.check_box :job_exp, class:"job",value:false %>
+                    <%= form.check_box :job_exp, class:"job"%>
 
                 </td>
             </tr>

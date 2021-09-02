@@ -1,7 +1,8 @@
 class FormService
     class << self
-        def getAllForms
-            @save = FromRepository.getAllForms(save_objs)
+    
+        def saveObjs(form)
+            @is_save_form = FormRepository.saveObjs(form)
         end
     end
 end

@@ -327,6 +327,12 @@ li {
     right: 2%;
 }
 
+.content-cv {
+    width: 1000px;
+    margin: 0 auto;
+    font-family: 'Meiryo-R';
+}
+
 .side {
     margin-bottom: 0px;
 }
@@ -386,4 +392,8 @@ span {
 
 .cv-btn {
     margin-left: 150px;
+}
+
+.cv-bdr {
+    border: none;
 }
