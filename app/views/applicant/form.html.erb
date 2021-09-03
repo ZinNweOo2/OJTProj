@@ -91,7 +91,7 @@
                 <td>
                     <%= form.text_area :currnet_address, class:'add-txt'%>
                         <% if @applicant.errors[:currnet_address].any? %>
-                            <div class="err-msg"> your current address<%= @applicant.errors[:currnet_address][0] %></div>
+                            <div class="err-msg"> Your current address<%= @applicant.errors[:currnet_address][0] %></div>
                         <% end %>
                 </td>
             </tr>
@@ -151,17 +151,25 @@
                                 <li>
                                     <%= form.label :mstr_uni,"Univesity"%> <br>
                                     <%= form.text_field :master_university,class:"uni" %>
+                                     <% if @applicant.errors[:master_university].any? %>
+                                        <div class="err-msg">Text <%= @applicant.errors[:master_university][0] %></div>
+                                     <% end %>
 
                                 </li>
                                 <li>
                                     <%= form.label :mstr_year,"Year"%> <br>
                                     <%= form.text_field :master_graduate_year ,class:"uni" %>
-
+                                     <% if @applicant.errors[:master_graduate_year].any? %>
+                                        <div class="err-msg">Text <%= @applicant.errors[:master_graduate_year][0] %></div>
+                                    <% end %>
 
                                 </li>
                                 <li>
                                     <%= form.label :mstr_degree, "Degree"%> <br>
                                     <%= form.text_field :master_degree,class:"uni" %>
+                                     <% if @applicant.errors[:master_degree].any? %>
+                                    <div class="err-msg">Text <%= @applicant.errors[:master_degree][0] %></div>
+                                    <% end %>
 
                                 </li>
                             </ul>
@@ -174,7 +182,9 @@
                 </th>
                 <td>
                     <%= form.text_field :deploma_name,class:"name-txt" %>
-                    
+                     <% if @applicant.errors[:deploma_name].any? %>
+                        <div class="err-msg">Text <%= @applicant.errors[:deploma_name][0] %></div>
+                     <% end %>
                 </td>
             </tr>
             <tr>
@@ -183,7 +193,9 @@
                 </th>
                 <td>
                     <%= form.text_field :certificate, class: "name-txt" %>
-
+                     <% if @applicant.errors[:certificate].any? %>
+                        <div class="err-msg">Text <%= @applicant.errors[:certificate][0] %></div>
+                    <% end %>
                 </td>
             </tr>
             <tr>
@@ -195,12 +207,18 @@
                         <ul>
                             <li>
                                 <%= form.label :language, "Langage"%> <br>
-                                <%= form.text_field :language,class:"lan",value:"Java" %>
+                                <%= form.text_field :language,class:"lan" %>
+                                 <% if @applicant.errors[:language].any? %>
+                                    <div class="err-msg">Text <%= @applicant.errors[:language][0] %></div>
+                                <% end %>
                             </li>
                             <li class="level">
                                 <%= form.label :level, "Level"%> <br>
-                                    <%= form.text_field :level ,class:"lvl" ,value:"A" %>
+                                    <%= form.text_field :level ,class:"lvl" %>
                                     <i class="material-icons pls1">&#xe548;</i>  
+                                     <% if @applicant.errors[:level].any? %>
+                                        <div class="err-msg">Text <%= @applicant.errors[:level][0] %></div>
+                                    <% end %>   
                              </li>
                          </ul>
                     </div>
@@ -214,18 +232,24 @@
                     <div class="bdr">
                         <%= form.label :english, "English",class: "heading"%>
                     </div> <br>
-                    <%= form.text_field :english,class:"skill",value:"Level" %>
-
+                    <%= form.text_field :english,class:"skill"%>
+                     <% if @applicant.errors[:english].any? %>
+                        <div class="err-msg">Text <%= @applicant.errors[:english][0] %></div>
+                    <% end %>
                         <div class="bdr01">
                             <%= form.label :japan, "Japan",class: "heading"%>
                         </div> <br>
-                        <%= form.text_field :japan,class:"skill",value:"Level" %>
-
+                        <%= form.text_field :japan,class:"skill" %>
+                         <% if @applicant.errors[:japan].any? %>
+                            <div class="err-msg">Text <%= @applicant.errors[:japan][0] %></div>
+                        <% end %>
                             <div class="bdr01">
                                 <%= form.label :other, "Other",class: "heading"%>
                             </div> <br>
-                            <%= form.text_field :other,class:"skill",value:"Level" %>
-
+                            <%= form.text_field :other,class:"skill" %>
+                             <% if @applicant.errors[:other].any? %>
+                                <div class="err-msg">Text <%= @applicant.errors[:other][0] %></div>
+                            <% end %>
                 </td>
             </tr>
         </table>
@@ -239,7 +263,6 @@
                 </th>
                 <td>
                     <%= form.check_box :job_exp, class:"job"%>
-
                 </td>
             </tr>
 
@@ -287,7 +310,6 @@
                     <% end %>
                 </td>
             </tr>
-
         </table>
         <%= link_to '<button type="button" class="reset">Reset</button>'.html_safe,form_path %>
         <%= form.submit "Submit", class:"submit"%>

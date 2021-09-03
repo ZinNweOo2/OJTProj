@@ -22,7 +22,7 @@ class ApplicantController < ApplicationController
   
   def save
     @form = Applicant.new(save_params) 
-    @is_save_form = FormService.saveObjs(@form)
+    @is_save_form = ApplicantService.saveObjs(@form)
       # render plain: save_params
     
     # if is_save_form

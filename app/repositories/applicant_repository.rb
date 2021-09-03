@@ -1,4 +1,4 @@
-class FormRepository
+class ApplicantRepository
       # @return [<Type>] <users>
     class << self
 

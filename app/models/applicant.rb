@@ -13,8 +13,13 @@ class Applicant < ApplicationRecord
     validates :bachelor_degree,  presence:true, length: {maximum: 100}
     validates :master_university,length: {maximum: 100}
     validates :master_graduate_year, length: {maximum: 100}
-    validates :master_degree,length: {maximum: 100}
-    validates :deploma_name,length: {maximum: 100}
-    validates :certificate,length: {maximum: 255}
-    validates :total_exp_year,length: {maximum: 3}  
+    validates :master_degree, length: {maximum: 100}
+    validates :deploma_name, length: {maximum: 100}
+    validates :certificate, length: {maximum: 255}
+    validates :total_exp_year, length: {maximum: 999}  
+    validates :other, length: {maximum:255}
+    validates :japan, length: {maximum:255}
+    validates :english, length: {maximum:255}
+
+
 end

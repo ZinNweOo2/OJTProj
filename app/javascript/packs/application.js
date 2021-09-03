@@ -7,59 +7,14 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-
+require('jquery')
+require("@rails/ujs").start()
+require("Turbolink").start()
+require("@rails/activestorage").start()
+    //= require jquery
+    //= require jquery_ujs
+    //= require turbolinks
+    //= require_tree .
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
-
-$(document).ready(function() {
-    var maxField = 2;
-    var addPhone = $('.pls');
-    var phoneWrapper = $('.phone');
-    var fieldHTML = '<div class="phone_item"><input type="number" class="data_phone" name="applicant[phone_no2]" value=""/><a href="javascript:void(0);" class="remove_phone"><i class="minus fa fa-minus" ></i></a></div>'; //New input field html 
-    var x = 1;
-    $(addPhone).click(function() {
-
-
-        if (x < maxField) {
-            x++;
-            $(phoneWrapper).append(fieldHTML);
-        }
-    });
-    $(phoneWrapper).on('click', '.remove_phone', function(e) {
-        e.preventDefault();
-        $(this).parent('div').remove();
-        x--;
-    });
-
-});
-
-$(document).ready(function() {
-    var maxField = 6;
-    var addPhone = $('.pls1');
-    var phoneWrapper = $('.level');
-    var fieldHTML = '<div class="level_item"><input type="number" class="lan" name="applicant[level_no2]" value=""/> <input type="number" class="lvl1" name="applicant[level_no2]" value=""/> <a href="javascript:void(0);" class="remove_phone"><i class="lvl-min fa fa-minus"></i></a></div>'; //New input field html 
-    var x = 1;
-    $(addPhone).click(function() {
-
-
-        if (x < maxField) {
-            x++;
-            $(phoneWrapper).append(fieldHTML);
-        }
-    });
-    $(phoneWrapper).on('click', '.remove_phone', function(e) {
-        e.preventDefault();
-        $(this).parent('div').remove();
-        x--;
-    });
-
-});
-
-$(document).ready(function() {
-    $(".job").onclick(function() {
-        alert('helloworld');
-
-    });
-});
